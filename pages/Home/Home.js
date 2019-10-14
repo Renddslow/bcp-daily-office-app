@@ -17,7 +17,14 @@ const CardContainer = styled.View`
 const Header = styled.Text`
   font-weight: 900;
   font-size: 24px;
+`;
+
+const HeaderRow = styled.View`
   margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const fetchData = (day) => catchify(
@@ -56,7 +63,9 @@ const Home = (props) => {
 
   return (
     <AppWrapper>
-      <Header>{today.format('MMMM D')}</Header>
+      <HeaderRow>
+        <Header>{today.format('MMMM D')}</Header>
+      </HeaderRow>
       <CardContainer>
         <TimeCard
           onPress={() => navigate('Office', { type: 'morning', day: todayKey })}
@@ -66,7 +75,6 @@ const Home = (props) => {
           onPress={() => navigate('Office', { type: 'evening', day: todayKey })}
         />
       </CardContainer>
-      <Button title="Refresh Data" onPress={() => refresh(todayKey)} />
     </AppWrapper>
   );
 };

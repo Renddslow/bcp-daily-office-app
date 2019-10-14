@@ -10,7 +10,8 @@ const Office = (props) => {
   const office = getParam('type');
   const psalmRefs = get(props.data, `offices.${office}.psalms.ref`, []);
 
-  const scriptureNav = (office, type) => () => navigate('Scripture', { office, type, day: getParam('day') });
+  const scriptureNav = (type) => () => navigate('Scripture', { office, type, day: getParam('day') });
+  const collectNav = () => navigate('Collect', { office,  day: getParam('day') });
 
   return (
     <AppWrapper>
@@ -18,24 +19,25 @@ const Office = (props) => {
         isAvailable
         reference={psalmRefs.join(', ')}
         type={psalmRefs.length > 1 ? 'Psalm Readings' : 'Psalm Reading'}
-        onPress={scriptureNav(office, 'psalms')}
+        onPress={scriptureNav('psalms')}
       />
       <Card
         isAvailable={get(props.data, `offices.${office}.firstLesson.verses`)}
         reference={get(props.data, `offices.${office}.firstLesson.ref`)}
         type="First Lesson"
-        onPress={scriptureNav(office, 'firstLesson')}
+        onPress={scriptureNav('firstLesson')}
       />
       <Card
         isAvailable={get(props.data, `offices.${office}.secondLesson.verses`)}
         reference={get(props.data, `offices.${office}.secondLesson.ref`)}
         type="Second Lesson"
-        onPress={scriptureNav(office, 'secondLesson')}
+        onPress={scriptureNav('secondLesson')}
       />
       <Card
         isAvailable
         type="Collect"
         reference={get(props.data, `collects.${office}.title`)}
+        onPress={collectNav}
       />
     </AppWrapper>
   );

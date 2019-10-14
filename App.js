@@ -5,6 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Home from './pages/Home';
 import Office from './pages/Office';
 import Scripture from './pages/Scripture';
+import Collect from './pages/Collect';
 
 const MainNavigator = createStackNavigator(
   {
@@ -19,6 +20,9 @@ const MainNavigator = createStackNavigator(
     },
     Scripture: {
       screen: Scripture,
+    },
+    Collect: {
+      screen: Collect,
     },
   },
   {

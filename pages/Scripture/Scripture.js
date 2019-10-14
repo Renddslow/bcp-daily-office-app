@@ -41,6 +41,9 @@ const Scripture = (props) => {
               {
                 getText(psalms)
               }
+              <FinalWords>
+                Glory be to the Father and to the Son, and to the Holy Spirit. As it was in the beginning, now and ever shall be, forever. Amen.
+              </FinalWords>
             </React.Fragment>
           )) :
           (
