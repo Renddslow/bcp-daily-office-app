@@ -5,7 +5,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "build": "expo build:ios",
+    "publish:ios": "xcrun altool --upload-app -f ../bcp-daily-office-ipa/current.ipa -u matt@movetothecenter.net"
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "^2.1.0",

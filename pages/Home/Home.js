@@ -28,7 +28,7 @@ const HeaderRow = styled.View`
 `;
 
 const fetchData = (day) => catchify(
-  fetch(`https://renddslow.ngrok.io/days/${day}`).then((d) => d.json())
+  fetch(`https://bcp-daily-office-auevpolm5q-uc.a.run.app/days/${day}`).then((d) => d.json())
 );
 
 const saveData = (day) => async ([err, data]) => {
