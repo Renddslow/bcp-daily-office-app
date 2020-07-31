@@ -12,7 +12,7 @@
   "dependencies": {
     "@react-native-community/datetimepicker": "^2.1.0",
     "catchify": "^2.6.1",
-    "dot-prop": "^5.1.0",
+    "dot-prop": "^5.1.1",
     "expo": "^35.0.0",
     "moment": "^2.24.0",
     "react": "16.8.3",
